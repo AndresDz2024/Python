@@ -17,3 +17,5 @@ def The_number(number):
     print(f"{coins_1} coins of 1 are used" )
 number = int(input("Write the number: "))
 The_number(number)
+
+## Programa desarrollado por Andres Santiago Daza Daza --- 1095916023
