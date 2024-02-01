@@ -24,3 +24,5 @@ while True:
         # Encuentra las longitudes más cercanas a la altura deseada e imprímelas
         closest = min(closest_lengths, key=lambda x: abs(x[0] - height) + abs(x[1] - height))
         print(closest[0], closest[1])
+
+        ##No funciona
