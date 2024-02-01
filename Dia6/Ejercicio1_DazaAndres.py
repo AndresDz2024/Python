@@ -16,11 +16,4 @@ Cantidad = int(input("Cuantas unidades deseas de este producto? "))
 
 total = producto1 * Cantidad
 
-print(total)
-    
-             
-   
-   
-   
-   
-   
+print("el coste total es: " , total)
