@@ -11,8 +11,8 @@ def Colision(bola1, bola2):
 
     return distance <= r1 + r2
 
-bola1 = (0, 0, 5)
-bola2 = (8, 0, 3)
+bola1 = (1, 4, 2)
+bola2 = (8, 8, 5)
 
 print(Colision(bola1, bola2))
 
