@@ -1,0 +1,3 @@
+import Ejercicio6_1Dia7_DazaAndres
+
+Ejercicio6_1Dia7_DazaAndres.dia6()
