@@ -1,28 +1,26 @@
-import itertools
+import math
 
-# Lee la entrada
+def calcular_longitudes(monedas, altura):
+    mcm_longitudes = monedas[0]
+    mcd_longitudes = monedas[0]
+    for moneda in monedas[1:]:
+        mcm_longitudes = mcm_longitudes * moneda // math.gcd(mcm_longitudes, moneda)
+        mcd_longitudes = math.gcd(mcd_longitudes, moneda)
+   
+    menor_mayor_longitud = mcm_longitudes * (altura // mcm_longitudes)
+    mayor_menor_longitud = mcm_longitudes * ((altura + mcm_longitudes - 1) // mcm_longitudes)
+
+    return menor_mayor_longitud, mayor_menor_longitud
+
+# Lectura de la entrada
 while True:
     n, t = map(int, input().split())
     if n == 0 and t == 0:
         break
+    monedas = [int(input()) for _ in range(n)]
+    alturas = [int(input()) for _ in range(t)]
 
-    coins_thickness = [int(input()) for _ in range(n)]
-    table_heights = [int(input()) for _ in range(t)]
-
-    print(coins_thickness)
-    print(table_heights)
-
-    # Itera sobre cada altura de la mesa
-    for height in t:
-        closest_lengths = []
-       
-        # Genera todas las combinaciones posibles de monedas para las patas
-        for combination in itertools.product(coins_thickness, repeat=4):
-            leg_lengths = [sum(x) for x in itertools.permutations(combination)]
-            closest_lengths.append((max([x for x in leg_lengths if x <= height]), min([x for x in leg_lengths if x >= height])))
-
-        # Encuentra las longitudes más cercanas a la altura deseada e imprímelas
-        closest = min(closest_lengths, key=lambda x: abs(x[0] - height) + abs(x[1] - height))
-        print(closest[0], closest[1])
-
-        ##No funciona
+    # Obtener las longitudes para cada mesa
+    for altura in alturas:
+        menor, mayor = calcular_longitudes(monedas, altura)
+        print(menor, mayor)
