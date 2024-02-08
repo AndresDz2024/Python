@@ -47,8 +47,10 @@ print(Lista2017)
 
 ##Punto 5:
 
-
-
+comerciales_seleccionados = [   comercial
+                                for comercial in comerciales 
+                                if 0.05 <= comercial["comision"] <= 0.11]
+print(comerciales_seleccionados)
 
 
 
@@ -60,3 +62,15 @@ for i in Njson1["ventas"]["comerciales"]:
 MaxValor.sort()
 MaxValor.reverse()
 print(MaxValor[0])
+
+##Punto 7:
+
+cont1=0
+ListaSevilla = []
+for x in Njson1["ventas"]["clientes"]:
+    if "Sevilla" in Njson1["ventas"]["clientes"][cont1]["ciudad"]:
+        ListaSevilla.append(x["id"],["apellido1"],["nombre"])
+        cont1 += 1
+    else:
+        cont1 += 1    
+print(ListaSevilla)
