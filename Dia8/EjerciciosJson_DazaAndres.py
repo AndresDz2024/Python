@@ -106,10 +106,44 @@ print(Ordenados)
 print("-----------------------------------------------------------------------------------------------------------------------------------------------------")
 print("Punto 8")
 cont2 = 0
-for x in Njson1["ventas"]["clientes"]:
-    if "A" or "P" in Njson1["ventas"]["clientes"][cont2]["nombre"]:
-        print("zi")
+NombresCondicion = []
+for l in Njson1["ventas"]["clientes"]:
+    if l["nombre"].startswith("A") and l["nombre"].endswith("n") or l["nombre"].startswith("P"): 
+        NombresCondicion.append(l["nombre"])
         cont2 += 1
     else:
-        print("no")
         cont2 += 1    
+
+N_condicion_orden = sorted(NombresCondicion)
+print(N_condicion_orden)
+
+##Punto 9:
+print("-----------------------------------------------------------------------------------------------------------------------------------------------------")
+print("Punto 9")
+cont3 = 0
+NombreInicia = []
+for w in Njson1["ventas"]["clientes"]:
+    if w["nombre"].startswith("A"):
+        NombreInicia.append(w["nombre"])
+        cont3 += 1
+    else:
+        cont3 +=1
+           
+NombreA_orden = sorted(NombreInicia)
+print(NombreA_orden)
+
+##Punto 10:
+print("-----------------------------------------------------------------------------------------------------------------------------------------------------")
+print("Punto 10")
+cont4 = 0
+Losde_Ruiz = []
+for si in Njson1["ventas"]["comerciales"]:
+    if "Ruiz" in si["apellido1"]:
+        Losde_Ruiz.append(si["nombre"]) 
+        cont4 += 1       
+    else:
+        cont4 += 1
+Losde_Ruiz_O = set(Losde_Ruiz)
+print(Losde_Ruiz_O)             
+
+## Termineeeeee vamooooos 
