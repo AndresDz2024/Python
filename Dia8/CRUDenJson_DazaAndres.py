@@ -1,5 +1,4 @@
 import json
-from operator import itemgetter
 
 def Crear_C():
     with open("data2.json", "r") as outfile:
